@@ -1,34 +1,95 @@
 #include <iostream>
-#include <windows.h>
+//#include <windows.h>
 #include "KsiazkaAdresowa.h"
 
-using namespace std;
+ using namespace std;
 
-void KsiazkaAdresowa::rejestracjaUzytkownika()
+
+void
+KsiazkaAdresowa::rejestracjaUzytkownika ()
 {
-    Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
-    uzytkownicy.push_back(uzytkownik);
+Uzytkownik uzytkownik = podajDaneNowegoUzytkownika ();
+
+
+uzytkownicy.push_back (uzytkownik);
+
     //dopiszUzytkownikaDoPliku(uzytkownik);
 
-    cout << endl << "Konto zalozono pomyslnie" << endl << endl;
-    system("pause");
+cout << endl << "Konto zalozono pomyslnie" << endl << endl;
+
+system ("pause");
+
 }
 
-Uzytkownik podajDaneNowegoUzytkownika()
+Uzytkownik KsiazkaAdresowa::podajDaneNowegoUzytkownika ()
 {
+
     Uzytkownik uzytkownik;
 
-    uzytkownik.id = pobierzIdNowegoUzytkownika();
 
-    do
-    {
-        cout << endl << "Podaj login: ";
-        cin >> uzytkownik.login;
-    } while (czyIstniejeLogin(uzytkownicy, uzytkownik.login) == true);
+    uzytkownik.ustawId (pobierzIdNowegoUzytkownika ());
 
+
+    string login;
+
+      do
+        {
+    cout << "Podaj login: ";
+
+    cin >> login;
+
+    uzytkownik.ustawLogin (login);
+
+    }
+      while (czyIstniejeLogin (uzytkownik.pobierzLogin()) == true);
+
+    string haslo;
     cout << "Podaj haslo: ";
-    cin >> uzytkownik.haslo;
+
+    cin >> haslo;
+
+    uzytkownik.ustawHaslo(haslo);
+
 
     return uzytkownik;
+
 }
+
+
+
+int
+KsiazkaAdresowa::pobierzIdNowegoUzytkownika ()
+{
+
+if (uzytkownicy.empty () == true)
+
+return 1;
+
+  else
+
+return uzytkownicy.back ().pobierzId() + 1;
+
+}
+
+bool KsiazkaAdresowa::czyIstniejeLogin (string login)
+{
+    for (int i=0; i < uzytkownicy.size(); i++){
+        if(uzytkownicy[i].pobierzLogin() == login){
+            cout << "Istnieje uzytkownik o takim loginie." << endl;
+            return true;
+        }
+    }
+    return false;
+}
+
+void KsiazkaAdresowa::wypiszWszystkichUzytkownikow(){
+    for (int i=0; i < uzytkownicy.size(); i++){
+        cout << uzytkownicy[i].pobierzId() << endl;
+        cout << uzytkownicy[i].pobierzLogin() << endl;
+        cout << uzytkownicy[i].pobierzHaslo() << endl;
+    }
+
+}
+
+
