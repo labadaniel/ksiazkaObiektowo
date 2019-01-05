@@ -10,6 +10,7 @@ class KsiazkaAdresowa
     int idUsunietegoAdresata;
 
     vector <Uzytkownik> uzytkownicy;
+    Uzytkownik podajDaneNowegoUzytkownika();
 
     public:
 
