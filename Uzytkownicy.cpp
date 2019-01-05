@@ -1,4 +1,4 @@
-#include "Uzytkownik.h"
+#include "Uzytkownicy.h"
 
 
     void Uzytkownik::ustawId (int noweId)
