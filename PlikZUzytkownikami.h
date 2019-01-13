@@ -19,6 +19,6 @@ public:
     void dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik);
     PlikZUzytkownikami(string NAZWAPLIKUZUZYTKOWNIKAMI) : nazwaPlikuZUzytkownikami(NAZWAPLIKUZUZYTKOWNIKAMI) {};
     vector <Uzytkownik> wczytajUzytkownikowZPliku();
-
+    void zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik> &uzytkownicy);
 };
 #endif

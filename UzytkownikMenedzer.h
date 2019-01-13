@@ -20,6 +20,8 @@ public:
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     int logowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
+    void zapiszWszystkichUzytkownikowDoPliku();
 
 };
 #endif
