@@ -156,7 +156,7 @@ Adresat UzytkownikMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownik
 string UzytkownikMenedzer::wczytajLinie()
 {
     string wejscie = "";
-    getline(cin, wejscie);
+    getline(cin>>ws, wejscie);
     return wejscie;
 }
 
