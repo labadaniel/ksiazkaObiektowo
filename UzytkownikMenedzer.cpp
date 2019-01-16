@@ -121,7 +121,7 @@ int UzytkownikMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstat
     adresat = podajDaneNowegoAdresata (idZalogowanegoUzytkownika, idOstatniegoAdresata);
 
     adresaci.push_back(adresat);
-    //dopiszAdresataDoPliku(adresat);
+    plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
     return ++idOstatniegoAdresata;
 }
@@ -198,4 +198,9 @@ void UzytkownikMenedzer::wyswietlDaneAdresata(Adresat adresat)
     cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;
     cout << "Email:              " << adresat.pobierzEmail() << endl;
     cout << "Adres:              " << adresat.pobierzAdres() << endl;
+}
+
+int UzytkownikMenedzer::wczytajAdresatow(int idZalogowanegoUzytkownika)
+{
+    plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika, adresaci);
 }

@@ -32,3 +32,11 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
     uzytkownikMenedzer.wyswietlWszystkichAdresatow();
 }
 
+int KsiazkaAdresowa::wczytajAdresatow(int idZalogowanegoUzytkownika)
+{
+    uzytkownikMenedzer.wczytajAdresatow(idZalogowanegoUzytkownika);
+}
+
+
+
+
