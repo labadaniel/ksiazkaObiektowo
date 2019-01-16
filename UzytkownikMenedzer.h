@@ -10,7 +10,6 @@
 using namespace std;
 
 class UzytkownikMenedzer {
-    string nazwaPlikuZAdresatami;
     int idZalogowanegoUzytkownika;
     vector <Uzytkownik> uzytkownicy;
     vector <Adresat> adresaci;
