@@ -7,15 +7,14 @@ int main()
     int idZalogowanegoUzytkownika = 0;
     int idOstatniegoAdresata = 0;
 
-    KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt");
-    //ksiazkaAdresowa.rejestracjaUzytkownika();
-    idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika();
-    //ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
-    idOstatniegoAdresata = ksiazkaAdresowa.wczytajAdresatow(idZalogowanegoUzytkownika);
-    ksiazkaAdresowa.dodajAdresata (idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    KsiazkaAdresowa ksiazkaAdresowa ("Uzytkownicy.txt", "Adresaci.txt");
+    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+    ksiazkaAdresowa.logowanieUzytkownika();
 
 
-    ksiazkaAdresowa.wyswietlWszystkichAdresatow();
-    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+
+
+
+
     return 0;
 }

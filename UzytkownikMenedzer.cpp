@@ -55,10 +55,6 @@ void UzytkownikMenedzer::wypiszWszystkichUzytkownikow() {
         cout << uzytkownicy[i].pobierzHaslo() << endl;
     }
 }
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
 
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
@@ -80,9 +76,10 @@ int UzytkownikMenedzer::logowanieUzytkownika()
 
                 if (itr -> pobierzHaslo() == haslo)
                 {
+                    idZalogowanegoUzytkownika = itr -> pobierzId();
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return itr -> pobierzId();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -96,111 +93,15 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     return 0;
 }
 
-void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
 {
-    string noweHaslo = "";
-    cout << "Podaj nowe haslo: ";
-    cin >> noweHaslo;
-
-    for (int i=0; i < uzytkownicy.size(); i++){
-        if(uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika){
-            uzytkownicy[i].ustawHaslo(noweHaslo);
-            cout << "Haslo zostalo zmienione." << endl << endl;
-            system("pause");
-        }
-    }
-    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
-}
-
-int UzytkownikMenedzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
-{
-    Adresat adresat;
-
-    system("cls");
-    cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata (idZalogowanegoUzytkownika, idOstatniegoAdresata);
-
-    adresaci.push_back(adresat);
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
-
-    return ++idOstatniegoAdresata;
-}
-
-Adresat UzytkownikMenedzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
-{
-    Adresat adresat;
-
-    adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika (idZalogowanegoUzytkownika);
-
-    cout << "Podaj imie: ";
-    adresat.ustawImie (wczytajLinie());
-    adresat.ustawImie (zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzImie()));
-
-    cout << "Podaj nazwisko: ";
-    adresat.ustawNazwisko (wczytajLinie());
-    adresat.ustawNazwisko (zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.pobierzNazwisko()));
-
-    cout << "Podaj numer telefonu: ";
-    adresat.ustawNumerTelefonu (wczytajLinie());
-
-    cout << "Podaj email: ";
-    adresat.ustawEmail (wczytajLinie());
-
-    cout << "Podaj adres: ";
-    adresat.ustawAdres (wczytajLinie());
-
-    return adresat;
-}
-
-string UzytkownikMenedzer::wczytajLinie()
-{
-    string wejscie = "";
-    getline(cin>>ws, wejscie);
-    return wejscie;
-}
-
-string UzytkownikMenedzer::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
-{
-    if (!tekst.empty())
-    {
-        transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
-        tekst[0] = toupper(tekst[0]);
-    }
-    return tekst;
-}
-
-void UzytkownikMenedzer::wyswietlWszystkichAdresatow()
-{
-    system("cls");
-    if (!adresaci.empty())
-    {
-        cout << "             >>> ADRESACI <<<" << endl;
-        cout << "-----------------------------------------------" << endl;
-        for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
-        {
-            wyswietlDaneAdresata(*itr);
-        }
-        cout << endl;
-    }
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
     else
-    {
-        cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
-    }
-    system("pause");
+        return false;
 }
 
-void UzytkownikMenedzer::wyswietlDaneAdresata(Adresat adresat)
+int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
 {
-    cout << endl << "Id:                 " << adresat.pobierzId() << endl;
-    cout << "Imie:               " << adresat.pobierzImie() << endl;
-    cout << "Nazwisko:           " << adresat.pobierzNazwisko() << endl;
-    cout << "Numer telefonu:     " << adresat.pobierzNumerTelefonu() << endl;
-    cout << "Email:              " << adresat.pobierzEmail() << endl;
-    cout << "Adres:              " << adresat.pobierzAdres() << endl;
-}
-
-int UzytkownikMenedzer::wczytajAdresatow(int idZalogowanegoUzytkownika)
-{
-    plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika, adresaci);
+    return idZalogowanegoUzytkownika;
 }

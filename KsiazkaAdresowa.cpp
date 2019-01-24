@@ -15,26 +15,10 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 int KsiazkaAdresowa::logowanieUzytkownika()
 {
     uzytkownikMenedzer.logowanieUzytkownika();
-}
-
-void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
-{
-    uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
-}
-
-int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
-{
-    uzytkownikMenedzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
-}
-
-void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
-{
-    uzytkownikMenedzer.wyswietlWszystkichAdresatow();
-}
-
-int KsiazkaAdresowa::wczytajAdresatow(int idZalogowanegoUzytkownika)
-{
-    uzytkownikMenedzer.wczytajAdresatow(idZalogowanegoUzytkownika);
+    if(uzytkownikMenedzer.czyUzytkownikJestZalogowany())
+    {
+        adresatMenedzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+    }
 }
 
 
