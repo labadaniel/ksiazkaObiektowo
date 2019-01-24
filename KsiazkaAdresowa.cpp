@@ -38,5 +38,9 @@ void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
     uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
 }
 
+void KsiazkaAdresowa::dodajAdresata()
+{
+    adresatMenedzer -> dodajAdresata();
+}
 
 

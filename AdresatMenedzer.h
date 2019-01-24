@@ -5,7 +5,7 @@
 #include <vector>
 #include <windows.h>
 #include <sstream>
-
+#include "MetodyPomocnicze.h"
 #include "Adresaci.h"
 #include "PlikZAdresatami.h"
 
@@ -15,6 +15,7 @@ class AdresatMenedzer
 {
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     PlikZAdresatami plikZAdresatami;
+    MetodyPomocnicze metodyPomocnicze;
     vector <Adresat> adresaci;
 
 public:
@@ -26,7 +27,8 @@ public:
 
     void wyswietlWszystkichAdresatow();
     void wyswietlDaneAdresata(Adresat adresat);
-
+    void dodajAdresata();
+    Adresat podajDaneNowegoAdresata();
 
 };
 

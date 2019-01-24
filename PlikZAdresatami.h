@@ -27,6 +27,10 @@ public:
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     string pobierzLiczbe(string tekst, int pozycjaZnaku);
+    int pobierzIdOstatniegoAdresata();
+    void dopiszAdresataDoPliku(Adresat adresat);
+    string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat);
+    bool czyPlikJestPusty(fstream &plikTekstowy);
 };
 
 
