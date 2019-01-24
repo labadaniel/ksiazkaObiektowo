@@ -21,6 +21,11 @@ int KsiazkaAdresowa::logowanieUzytkownika()
     }
 }
 
+void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
+{
+    adresatMenedzer -> wyswietlWszystkichAdresatow();
+}
+
 
 
 

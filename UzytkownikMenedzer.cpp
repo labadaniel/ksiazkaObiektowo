@@ -1,5 +1,5 @@
 #include "UzytkownikMenedzer.h"
-//#include <windows.h>
+#include <windows.h>
 
 void UzytkownikMenedzer::rejestracjaUzytkownika () {
 
@@ -105,3 +105,5 @@ int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
 }
+
+
