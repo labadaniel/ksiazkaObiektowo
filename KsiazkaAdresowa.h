@@ -28,6 +28,10 @@ public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     int logowanieUzytkownika();
+    void wyswietlWszystkichAdresatow();
+    void wylogowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
+    void dodajAdresata();
 
 
 
