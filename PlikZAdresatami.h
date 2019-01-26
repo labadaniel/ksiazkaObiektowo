@@ -31,6 +31,7 @@ public:
     void dopiszAdresataDoPliku(Adresat adresat);
     string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat);
     bool czyPlikJestPusty(fstream &plikTekstowy);
+    int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
 };
 
 
