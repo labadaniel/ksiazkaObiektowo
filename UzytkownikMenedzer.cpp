@@ -91,6 +91,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
     return 0;
+
 }
 
 bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
