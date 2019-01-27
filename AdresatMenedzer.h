@@ -31,7 +31,7 @@ public:
     Adresat podajDaneNowegoAdresata();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
-    int usunAdresata();
+    void usunAdresata();
     void edytujAdresata();
     int podajIdWybranegoAdresata();
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);

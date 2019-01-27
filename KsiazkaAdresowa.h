@@ -37,7 +37,7 @@ public:
     void dodajAdresata();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
-    int usunAdresata();
+    void usunAdresata();
     void edytujAdresata();
     bool czyUzytkownikJestZalogowany();
     char wybierzOpcjeZMenuUzytkownika();
