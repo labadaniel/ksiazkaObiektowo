@@ -29,6 +29,14 @@ public:
     void wyswietlDaneAdresata(Adresat adresat);
     void dodajAdresata();
     Adresat podajDaneNowegoAdresata();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
+    int usunAdresata();
+    void edytujAdresata();
+    int podajIdWybranegoAdresata();
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+
+    char wybierzOpcjeZMenuEdycja();
 
 };
 
