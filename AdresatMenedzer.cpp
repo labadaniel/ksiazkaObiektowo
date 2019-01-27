@@ -141,7 +141,7 @@ void AdresatMenedzer::wyszukajAdresatowPoNazwisku()
     system("pause");
 }
 
-int AdresatMenedzer::usunAdresata()
+void AdresatMenedzer::usunAdresata()
 {
     int idUsuwanegoAdresata = 0;
     int numerLiniiUsuwanegoAdresata = 0;
@@ -167,13 +167,13 @@ int AdresatMenedzer::usunAdresata()
                 adresaci.erase(itr);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
-                return idUsuwanegoAdresata;
+                return;
             }
             else
             {
                 cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
                 system("pause");
-                return 0;
+                return;
             }
         }
     }
@@ -182,7 +182,7 @@ int AdresatMenedzer::usunAdresata()
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");
     }
-    return 0;
+    return;
 }
 
 int AdresatMenedzer::podajIdWybranegoAdresata()

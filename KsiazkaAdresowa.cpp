@@ -52,7 +52,7 @@ void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
     adresatMenedzer -> wyszukajAdresatowPoNazwisku();
 }
 
-int KsiazkaAdresowa::usunAdresata()
+void KsiazkaAdresowa::usunAdresata()
 {
     adresatMenedzer -> usunAdresata();
 }
