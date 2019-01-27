@@ -163,7 +163,7 @@ int AdresatMenedzer::usunAdresata()
             if (znak == 't')
             {
                 numerLiniiUsuwanegoAdresata = plikZAdresatami.zwrocNumerLiniiSzukanegoAdresata(idUsuwanegoAdresata);
-                usunWybranaLinieWPliku(numerLiniiUsuwanegoAdresata);
+                plikZAdresatami.usunWybranaLinieWPliku(numerLiniiUsuwanegoAdresata);
                 adresaci.erase(itr);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
@@ -185,7 +185,7 @@ int AdresatMenedzer::usunAdresata()
     return 0;
 }
 
-int podajIdWybranegoAdresata()
+int AdresatMenedzer::podajIdWybranegoAdresata()
 {
     int idWybranegoAdresata = 0;
     cout << "Podaj numer ID Adresata: ";

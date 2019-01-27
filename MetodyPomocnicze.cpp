@@ -49,7 +49,7 @@ int MetodyPomocnicze::wczytajLiczbeCalkowita()
 
     while (true)
     {
-        getline(cin, wejscie);
+        getline(cin >> ws, wejscie);
 
         stringstream myStream(wejscie);
         if (myStream >> liczba)
