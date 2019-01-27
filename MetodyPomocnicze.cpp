@@ -30,7 +30,7 @@ char MetodyPomocnicze::wczytajZnak()
 
     while (true)
     {
-        getline(cin, wejscie);
+        getline(cin >> ws, wejscie);
 
         if (wejscie.length() == 1)
         {
