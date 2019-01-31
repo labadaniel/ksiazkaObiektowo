@@ -151,13 +151,10 @@ void AdresatMenedzer::usunAdresata()
     idUsuwanegoAdresata = podajIdWybranegoAdresata();
 
     char znak;
-    bool czyIstniejeAdresat = false;
-
     for (vector <Adresat>::iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
     {
         if (itr -> pobierzId() == idUsuwanegoAdresata)
         {
-            czyIstniejeAdresat = true;
             cout << endl << "Potwierdz naciskajac klawisz 't': ";
             znak = metodyPomocnicze.wczytajZnak();
             if (znak == 't')
@@ -177,11 +174,8 @@ void AdresatMenedzer::usunAdresata()
             }
         }
     }
-    if (czyIstniejeAdresat == false)
-    {
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");
-    }
     return;
 }
 
@@ -203,15 +197,11 @@ void AdresatMenedzer::edytujAdresata()
 
     cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
     idEdytowanegoAdresata = podajIdWybranegoAdresata();
-
     char wybor;
-    bool czyIstniejeAdresat = false;
-
     for (vector <Adresat>::iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
     {
         if (itr -> pobierzId() == idEdytowanegoAdresata)
         {
-            czyIstniejeAdresat = true;
             wybor = wybierzOpcjeZMenuEdycja();
 
             switch (wybor)
@@ -250,12 +240,9 @@ void AdresatMenedzer::edytujAdresata()
                 cout << endl << "Nie ma takiej opcji w menu! Powrot do menu uzytkownika." << endl << endl;
                 break;
             }
-        }
+        }return;
     }
-    if (czyIstniejeAdresat == false)
-    {
-        cout << endl << "Nie ma takiego adresata." << endl << endl;
-    }
+    cout << endl << "Nie ma takiego adresata." << endl << endl;
     system("pause");
 }
 
