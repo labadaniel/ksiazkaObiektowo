@@ -34,10 +34,10 @@ public:
     string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat);
     bool czyPlikJestPusty(fstream &plikTekstowy);
     int zwrocNumerLiniiSzukanegoAdresata(int idAdresata);
-    void usunWybranaLinieWPliku(int numerUsuwanejLinii);
+    void usunWybranegoAdresataZPliku(int idUsuwanegoAdresata);
     void usunOdczytywanyPlik(string nazwaPlikuZRozszerzeniem);
     void zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(string nazwaTymczasowegoPlikuZRozszerzeniem, string nazwaPlikuZRozszerzeniem);
-    void zaktualizujDaneEdytowanegoAdresata(Adresat adresat, int idEdytowanegoAdresata);
+    void zaktualizujDaneEdytowanegoAdresata(Adresat adresat);
     void edytujWybranaLinieWPliku(int numerEdytowanejLinii, string liniaZDanymiAdresataOddzielonePionowymiKreskami);
 };
 
